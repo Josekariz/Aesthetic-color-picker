@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { HexColorPicker } from 'react-colorful';
 import './App.css';
 
 function App() {
+  const [backgroundColor, setBackgroundColor] = useState('#ffffff');
+
+  const handleColorChange = (color) => {
+    setBackgroundColor(color);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ height: '100vh', backgroundColor }}>
+      <div className="color-picker-container">
+        <HexColorPicker color={backgroundColor} onChange={handleColorChange} className="color-picker" />
+        <div className="color-code">{backgroundColor}</div>
+      </div>
     </div>
   );
 }
