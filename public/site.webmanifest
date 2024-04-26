@@ -1,6 +1,6 @@
 {
-  "name": "Colorr",
-  "short_name": "Website Previewer",
+  "name": "Aesthetic Colorr previewer",
+  "short_name": "Colorr",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
