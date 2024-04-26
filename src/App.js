@@ -29,6 +29,20 @@ function App() {
   return (
     <div className="App" style={{ minHeight: "100vh", backgroundColor }}>
       <div className="color-picker-container">
+        <div className="color-picker-group">
+          <h2 className="color-header">Background</h2>
+          <HexColorPicker
+            color={backgroundColor}
+            onChange={handleBackgroundColorChange}
+            className="color-picker"
+          />
+          <div
+            className="color-code"
+            onClick={() => copyToClipboard(backgroundColor)}
+          >
+            {backgroundColor}
+          </div>
+        </div>
         <div className="preview">
           <h1 style={{ color: textColor }}>Website Title</h1>
           <p style={{ color: textColor }}>
@@ -39,20 +53,6 @@ function App() {
           </button>
         </div>
         <div className="color-pickers">
-          <div className="color-picker-group">
-            <h2 className="color-header">Background</h2>
-            <HexColorPicker
-              color={backgroundColor}
-              onChange={handleBackgroundColorChange}
-              className="color-picker"
-            />
-            <div
-              className="color-code"
-              onClick={() => copyToClipboard(backgroundColor)}
-            >
-              {backgroundColor}
-            </div>
-          </div>
           <div className="color-picker-group">
             <h2 className="color-header">Text</h2>
             <HexColorPicker
