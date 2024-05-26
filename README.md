@@ -1,6 +1,7 @@
 # Aesthetic Website Template Previewer
 
 This is a React application that allows you to create an aesthetic website template by customizing the background color, text color, and button color. It provides a live preview of the template, along with color pickers and color code displays for each color option.
+![image](https://github.com/Josekariz/Aesthetic-color-picker/assets/108508143/03a2672a-e5c6-4d47-93ae-3381bb015172)
 
 ## Features
 
