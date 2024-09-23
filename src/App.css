@@ -2,33 +2,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
   padding: 20px;
+  font-family: 'Arial', sans-serif;
 }
 
-.color-picker-container {
+.triangle-layout {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  max-width: 100%;
-}
-
-.preview {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  max-width: 400px;
-  margin-bottom: 40px;
-}
-
-.color-pickers {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  max-width: 1400px;
+  width: 100%;
 }
 
 .color-picker-group {
@@ -36,65 +20,289 @@
   flex-direction: column;
   align-items: center;
   margin: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 400px;
+}
+
+.color-picker-group:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .color-header {
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .color-picker {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.color-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 15px;
 }
 
 .color-code {
-  font-size: 16px;
-  font-weight: bold;
-  margin-top: 10px;
-  padding: 5px 10px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
-.preview h1 {
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-
-.preview p {
+  flex-grow: 1;
   font-size: 18px;
-  margin-bottom: 30px;
-}
-
-.preview button {
-  font-size: 16px;
-  padding: 10px 20px;
-  border: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
   border-radius: 5px;
+  text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
+.color-code:hover {
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.icon-button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-button:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.1);
+}
+
+.edit-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.color-code-input {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: calc(100% - 60px);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.color-code-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.center-demo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.preview {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 60px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.preview:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.preview h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.preview p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.preview button {
+  font-size: 1.2rem;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
 .preview button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.color-pickers-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 1200px) {
+  .triangle-layout {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the color picker cards */
+  }
+
+  .color-picker-group {
+    flex: 0 0 calc(33.333% - 40px);
+    max-width: calc(33.333% - 40px);
+  }
+
+  .center-demo {
+    order: 2;
+    flex: 0 0 100%;
+  }
+
+  .color-pickers-row {
+    order: 3;
+    justify-content: center; /* Center the color pickers in the row */
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 769px) {
+  .color-picker-group {
+    max-width: 350px;
+  }
+
+  .color-pickers-row {
+    justify-content: space-around;
+  }
 }
 
 @media (max-width: 768px) {
-  .color-picker-container {
-    flex-direction: column;
+  .App {
+    padding: 10px;
   }
 
-  .color-pickers {
-    flex-direction: column;
+  .triangle-layout {
+    width: 100%;
+  }
+
+  .color-picker-group {
+    margin: 10px 0;
+    padding: 20px;
+    max-width: 100%;
+    width: calc(100% - 20px);
+  }
+
+  .color-picker {
+    height: 200px;
+  }
+
+  .color-header {
+    font-size: 1.2rem;
+  }
+
+  .color-code, .color-code-input {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+
+  .icon-button {
+    padding: 8px;
   }
 
   .preview {
+    padding: 30px;
     max-width: 100%;
+  }
+
+  .preview h1 {
+    font-size: 2rem;
+  }
+
+  .preview p {
+    font-size: 1rem;
+  }
+
+  .preview button {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 5px;
+  }
+
+  .color-picker-group {
+    padding: 15px;
+  }
+
+  .color-picker {
+    height: 180px;
+  }
+
+  .color-header {
+    font-size: 1.1rem;
+  }
+
+  .color-code, .color-code-input {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .icon-button {
+    padding: 6px;
+  }
+
+  .preview {
+    padding: 20px;
+  }
+
+  .preview h1 {
+    font-size: 1.8rem;
+  }
+
+  .preview p {
+    font-size: 0.9rem;
+  }
+
+  .preview button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
   }
 }
